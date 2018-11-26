@@ -1,0 +1,66 @@
+body{
+    background-image:  url(images/tekstura_siniy_fon_ten_50468_1600x900.jpg);
+    background-repeat: repeat-x;
+    background-attachment: fixed;
+}
+
+#page{
+    height: 450px;
+    margin: 0 auto;
+    margin-top: 90px;
+    width: 700px;
+    background-color: rgba(240, 245, 240, 0.7);
+    border-radius: 20px 20px 20px 20px;
+    border: 3px solid;
+    border-color: rgba(24, 20, 163, 0.8);
+}
+
+#login{
+    margin-top: 40px;
+}
+
+#page input{
+    width: 380px;
+    height: 55px;
+    border-radius: 20px 20px 20px 20px;
+    border: 3px solid #ffffff;
+    margin-left: 150px;
+    margin-top: 30px;
+    border-color: rgba(24, 20, 163, 0.8);
+    outline: none;
+    background-color: #ffffff;
+    font-size: 30px;
+    padding-left: 5px;
+}
+
+#send{
+    width: 300px;
+    margin-left: 200px;
+}
+
+#back_a{
+    margin-right: 43.5%;
+}
+
+#back_a ul li{
+    float: right;
+    list-style-type: none;
+    height: 30px;
+    margin-top: 55px; 
+}
+
+#back_a ul li a{
+    text-decoration: none;
+    color: #ffffff;
+    padding: 20px;
+    font-size: 30px;
+    border-radius: 20px 20px 20px 20px;
+    border: 3px solid #ffffff;
+    background-color: rgba(240, 245, 240, 0.3);
+    
+}
+
+#back_a ul li a:hover{
+    background: rgba(24, 20, 163, 0.3);
+    text-decoration: underline;
+}

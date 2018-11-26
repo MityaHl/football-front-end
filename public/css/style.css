@@ -1,0 +1,316 @@
+body{
+    background-image: url(images/tekstura_siniy_fon_ten_50468_1600x900.jpg);
+    background-repeat: repeat-x;
+    background-attachment: fixed;
+}
+
+#top_line{
+    height: 180px;
+    width: 1400px;
+    margin: 0 auto;
+    background-color: rgba(240, 245, 240, 0.2);
+    margin-top: 10px;
+    border-radius: 50px 50px 20px 20px;
+    border: 3px solid #ffffff;
+}
+
+#logo{
+    background-image: url(images/14.png);
+    background-repeat:no-repeat;
+    margin-top: 20px;
+    height: 180px;
+    width: 20%;
+    float: left;
+    margin-left: 150px;
+}
+
+#prof{
+    height: 150px;
+    width: 30%;
+    float: right;
+    margin-right: 28px;
+}
+
+#page{
+    height: 500px;
+    margin: 0 auto;
+    width: 1400px;
+    margin-top: 10px;
+    background-color: rgba(240, 245, 240, 0.2);
+    border-radius: 20px 20px 20px 20px;
+    border: 3px solid #ffffff;
+    color: rgba(24, 20, 163, 0.8);
+}
+
+#prof ul li{
+    float: right;
+    list-style-type: none;
+    height: 30px;
+    margin-top: 55px; 
+    padding-left: 5px;
+}
+#prof ul li a{
+    text-decoration: none;
+    border-radius: 20px 20px 20px 20px;
+    color: rgba(24, 20, 163, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    background: rgba(240, 245, 240, 0.8);
+    border: 3px solid #ffffff;
+}
+#prof ul li a:hover{
+    background: rgba(24, 20, 163, 0.3);
+    text-decoration: underline;
+    border-radius: 15px;
+    color: #ffffff;
+}
+
+#stadium{
+    float: left;
+    margin-top: 22px;
+    margin-left: 25px;
+    width: 1000px;
+    height: 450px;
+    background-color: rgba(240, 245, 240, 0.8);
+    border-radius: 20px 20px 20px 20px;
+    display: block;
+}
+
+#result{
+    background-color: rgba(240, 245, 240, 0.8);
+    border-radius: 20px 20px 20px 20px;
+    float: left;
+    margin-top: 22px;
+    margin-left: 25px;
+    width: 1000px;
+    height: 450px;
+    display: none;
+}
+
+#transfers{
+    background-color: rgba(240, 245, 240, 0.8);
+    border-radius: 20px 20px 20px 20px;
+    float: left;
+    margin-top: 22px;
+    margin-left: 25px;
+    width: 1000px;
+    height: 450px;
+    display: none;
+}
+
+#stats{
+    background-color: rgba(240, 245, 240, 0.8);
+    border-radius: 20px 20px 20px 20px;
+    float: left;
+    margin-top: 22px;
+    margin-left: 25px;
+    width: 1000px;
+    height: 450px;
+    display: none;
+}
+
+#stats table{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 7px;
+}
+
+#stats table tr td{
+    width: 400px;
+    height: 35px;
+    border: 3px solid #ffffff;
+    border-radius: 10px 10px 10px 10px;
+}
+
+#footcourt{
+    width: 609px;
+    height: 381px;
+    background-size: cover;
+    border-radius: 10px 10px 10px 10px;
+    background-image: url(images/pole2.jpg);
+    margin-top: 34px;
+    margin-left: 30px;
+    float: left;
+}
+
+#choose-player{
+    display: none;
+    width: 400px;
+    height: 381px;
+    margin-left: 100px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px 10px 10px 10px;
+    margin-top: -38px;
+
+}
+
+#footcourt table tr td{
+    width: 150px;
+    height: 70px;
+    padding-top: 5px;
+}
+
+#footcourt table{
+    margin-top: 38px;
+    margin-left: 40px;
+}
+
+#choose-player table{
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 16px;
+}
+
+#choose-player table tr td{
+    width: 300px;
+    height: 45px;
+    border: 3px solid #ffffff;
+    margin-top: 5px;
+}
+
+#choose-player input{
+    width: 30px;
+    height: 30px;
+}
+
+#choose-pl{
+    background: none;
+    margin-left: 125px;
+    margin-top: 10px;
+    border-radius: 10px 10px 10px 10px;
+    border: 3px solid #ffffff;
+    outline: none;
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.oblack{
+    width: 60px;
+    height: 60px;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+}
+
+.oblack:hover{
+    background-color: rgba(240, 245, 240, 0.3);
+}
+
+.oblack p{
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#players{
+    float: right;
+    width: 250px;
+    height: 381px;
+    margin-top: 34px;
+    border-radius: 10px 10px 10px 10px;
+    margin-right: 50px;
+    border: 3px solid #ffffff;
+}
+
+#players table{
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#players table tr td{
+    width: 230px;
+    height: 25px;
+    border: 3px solid #ffffff;
+}
+
+#trans-players{
+    margin-top: 34px;
+    margin-left: 120px;
+    width: 409px;
+    height: 381px;
+    border-radius: 10px 10px 10px 10px;
+    float: left;
+    border: 3px solid #ffffff;
+}
+
+#trans-players table tr td{
+    width: 230px;
+    height: 25px;
+    border: 3px solid #ffffff;
+}
+
+#player-param input{
+    width: 200px;
+    height: 40px;
+    border-radius: 10px 10px 10px 10px;
+    border: 3px solid #ffffff;
+    outline: none;
+    font-size: 20px;
+    margin-top: 30px;
+    margin-left: 25px;
+}
+
+#player-param select{
+    margin-left: 25px;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px 10px 10px 10px;
+    border: 3px solid #ffffff;
+    outline: none;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+#player-param{
+    float: right;
+    margin-right: 120px;
+    width: 250px;
+    height: 381px;
+    margin-top: 34px;
+    border-radius: 10px 10px 10px 10px;
+    border: 3px solid #ffffff;
+}
+
+#menu{
+    float: right;
+    margin-top: 25px;
+    margin-right: 25px;
+    width: 320px;
+    height: 450px;
+    background-color: rgba(240, 245, 240, 0.8);
+    border-radius: 20px 20px 20px 20px;
+}
+
+#menu ul li{
+    width: 235px;
+    list-style-type: none;
+    margin: 0 auto;
+    margin-top: 17px;
+    border-radius: 20px 20px 20px 20px;
+    background-color: rgba(240, 245, 240, 1);
+    border: 3px solid #ffffff;
+    float: left;
+}
+
+#menu ul li p{
+    font-size: 25px;
+    list-style-type: none;
+    text-align: center;
+}
+
+#menu ul li:hover{
+    background: rgba(24, 20, 163, 0.3);
+}
+
+
+.display{
+    display: block !important;
+}
+
+.nonedisplay{
+    display: none !important;
+}
+

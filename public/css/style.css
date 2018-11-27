@@ -24,11 +24,49 @@ body{
     margin-left: 150px;
 }
 
-#prof{
+#top-line-right{
     height: 150px;
     width: 30%;
     float: right;
-    margin-right: 28px;
+}
+
+#ident{
+    float: left;
+    margin-left: 74px;
+}
+
+#ident ul{
+    width: 180px;
+    float: right;
+    list-style-type: none;
+    height: 80px;
+    margin-top: 55px;
+    padding-left: 5px;
+    background-color: rgba(240, 245, 240, 0.2);
+    border-radius: 20px 20px 20px 20px;
+    border: 3px solid #ffffff;
+}
+
+#ident ul li{
+    padding-top: 8px;
+    height: 30px;
+    font-size: 25px;
+}
+
+#log-out{
+    margin-top: 55px;
+    float: right;
+    margin-right: 23px;
+}
+
+#log-out button{
+    font-size: 25px;
+    background-color: rgba(240, 245, 240, 0.2);
+    border-radius: 20px 20px 20px 20px;
+    border: 3px solid #ffffff;
+    height: 86px;
+    width: 100px;
+    outline: none;
 }
 
 #page{
@@ -42,23 +80,15 @@ body{
     color: rgba(24, 20, 163, 0.8);
 }
 
-#prof ul li{
-    float: right;
-    list-style-type: none;
-    height: 30px;
-    margin-top: 55px; 
-    padding-left: 5px;
+#log-out:hover{
+    background: rgba(24, 20, 163, 0.3);
+    text-decoration: underline;
+    border-radius: 15px;
+    color: #ffffff;
 }
-#prof ul li a{
-    text-decoration: none;
-    border-radius: 20px 20px 20px 20px;
-    color: rgba(24, 20, 163, 0.8);
-    padding: 20px;
-    font-size: 30px;
-    background: rgba(240, 245, 240, 0.8);
-    border: 3px solid #ffffff;
 }
-#prof ul li a:hover{
+
+#ident ul li:hover{
     background: rgba(24, 20, 163, 0.3);
     text-decoration: underline;
     border-radius: 15px;
@@ -234,12 +264,19 @@ body{
     border-radius: 10px 10px 10px 10px;
     float: left;
     border: 3px solid #ffffff;
+    overflow-y: scroll;
 }
 
 #trans-players table tr td{
     width: 230px;
-    height: 25px;
+    height: 30px;
     border: 3px solid #ffffff;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+#trans-players table tr td .without-border{
+    border: none;
 }
 
 #player-param input{

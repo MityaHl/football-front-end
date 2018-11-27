@@ -11,7 +11,7 @@ function login(login, password) {
             token = data["value"];
             document.cookie = "Auth-Token=" + token;
             if (token !== null) {
-                window.location = '/index.html?token=' + token;
+                window.location = '/index.html';
             }
         }
     })

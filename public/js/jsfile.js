@@ -56,3 +56,4 @@ for(var i = 0; i < circles.length; i++){
     circles[i].addEventListener('click', choosePlDivWindow);
 }
 chooseBtn.addEventListener('click', stadiumWindow);
+

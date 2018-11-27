@@ -4,25 +4,33 @@
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="loginstyle.css">
+    <script language="javascript" type="text/javascript"
+            src="http://code.jquery.com/jquery-2.1.1.min.js">
+    </script>
+    <script language="javascript" type="text/javascript"
+            src="js/login.js">
+    </script>
 </head>
 <body>
-    <div id="page"> 
-            <div id="login">
-               <form>
-                <input type="text" name="login" placeholder="Логин"> <br>
-                <input type="password" name="password" placeholder="Пароль"><br>
-                <div id="send">
-                     <input  type="submit" value="Войти">
-                </div>
-               </form>
-            </div>
+<div id="page">
+    <div id="loginn">
+        <input type="text" id="login" name="login" placeholder="Логин"> <br>
+        <input type="password" id="password" name="password" placeholder="Пароль"><br>
+        <div id="send">
+            <button id="submit" onclick="reg(
+                document.getElementById('login').value,
+                document.getElementById('password').value)">Вход
+            </button>
+
+        </div>
     </div>
-    <div id="back_a">
-           <ul>
-               <li>
-                   <a href="index.html">На главную</a>
-               </li>
-           </ul>
-    </div>
+</div>
+<div id="back_a">
+    <ul>
+        <li>
+            <a href="registration.html">Зарегестрироваться</a>
+        </li>
+    </ul>
+</div>
 </body>
 </html>

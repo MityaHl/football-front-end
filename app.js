@@ -5,7 +5,20 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var app = express();
-console.log('!!!');
+
+// испольузем куки-парсер
+app.use(cookieParser());
+// если пользователь запросил страницу user.html
+app.get('/index.html', function(req, res, next) {
+// смотрим, есть ли в куках токен
+// если токена нет - редиректим на логин
+    let token = req.cookies['Auth-Token'];
+    if (!req.cookies['Auth-Token']) {
+        res.redirect('/login.html')
+    }
+    next();
+});
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
@@ -22,18 +35,22 @@ app.use(express.static("public/js"));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+    next(createError(404));
 });
 
 // error handler
 app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
+// set locals, only providing error in development
+    res.locals.message = err.message;
+    res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
+// render the error page
+    res.status(err.status || 500);
+    res.render('error');
 });
 
 module.exports = app;
+
+
+
+console.log("StaticServer started...");

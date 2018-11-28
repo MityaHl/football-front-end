@@ -27,10 +27,6 @@ var stadiumWindow = function(){
     changeClassList(table, choosePlayer, results, transfers);
 }
 
-var choosePlDivWindow = function(){
-    changeClassList(choosePlayer, courttable, results, transfers);
-}
-
 var statsWindow = function(){
     changeClassList(stats, stadium, results, transfers);
 }
@@ -57,9 +53,75 @@ findPl.addEventListener('click', function (e){
     table.classList.remove('nonedisplay');
     table.classList.add('display');
 })
-for(var i = 0; i < circles.length; i++){
-    circles[i].addEventListener('click', choosePlDivWindow);
+
+let choosePlDivWindow = function(circle){
+    getAvailablePlayers("Нападающий");
+    changeClassList(choosePlayer, table, results, transfers);
+    let pl = document.getElementById("pl");
+    let val = pl.innerText;
+    let plB;
+    let plList;
+    if(circle === "def1"){
+        plList = document.getElementById("def1-name");
+        plB = document.getElementById("def1-b");
+    }else if(circle === "def2"){
+        plList = document.getElementById("def2-name");
+        plB = document.getElementById("def2-b");
+    }else if(circle === "def3"){
+        plList = document.getElementById("def3-name");
+        plB = document.getElementById("def3-b");
+    }else if(circle === "def4"){
+        plList = document.getElementById("def4-name");
+        plB = document.getElementById("def4-b");
+    }else if(circle === "middlefielder1"){
+        plList = document.getElementById("middlefielder1-name");
+        plB = document.getElementById("middlefielder1-b");
+    }else if(circle === "middlefielder2"){
+        plList = document.getElementById("middlefielder2-name");
+        plB = document.getElementById("middlefielder2-b");
+    }else if(circle === "keeper"){
+        plList = document.getElementById("keeper-name");
+        plB = document.getElementById("keeper-b");
+    }else if(circle === "middlefielder4"){
+        plList = document.getElementById("middlefielder4-name");
+        plB = document.getElementById("middlefielder4-b");
+    }else if(circle === "forward1"){
+        plList = document.getElementById("forward1-name");
+        plB = document.getElementById("forward1-b");
+    }else if(circle === "forward2"){
+        plList = document.getElementById("forward2-name");
+        plB = document.getElementById("forward2-b");
+    }
+    else if(circle === "middlefielder3"){
+        plList = document.getElementById("middlefielder3-name");
+        plB = document.getElementById("middlefielder3-b");
+    }
+    pl.addEventListener('click', function() {
+        plList.innerHTML = val;
+        plB.innerHTML = val[0];
+        changeClassList(table, choosePlayer);
+    })
 }
+
+
+for(var i = 0; i < circles.length; i++){
+    let k = circles[i].id;
+    circles[i].addEventListener('click', function(){
+        choosePlDivWindow(k);
+    })
+}
+/*function setPl(circle) {
+
+    let pl = document.getElementById("pl");
+    let val = pl.innerText;
+    let plList = document.getElementById("def1-name");
+    let plB = document.getElementById("def1-b");
+    pl.addEventListener('click', function() {
+        plList.innerHTML = val;
+        plB.innerHTML = val[0];
+        changeClassList(table, choosePlayer);
+    })
+}*/
 
 function getUserInfo() {
     $.ajax({
@@ -70,6 +132,32 @@ function getUserInfo() {
             const balanceView = document.getElementById("balance");
             loginView.innerHTML = data["login"];
             balanceView.innerHTML = data["balance"] + ' $';
+        }
+    })
+}
+
+function setPlayers() {
+    let list = document.getElementsByClassName("plName");
+    let str = '';
+    for(let i = 0; i < list.length; i++){
+        if(i === 10){
+            str += list[i].innerText;
+        }else{
+            str += list[i].innerText + ',';
+        }
+    }
+let json = '{ "token": "' + getCookie("Auth-Token") + '"," "["' + str + '"]"}';
+    $.ajax({
+        url: 'http://localhost:8080/',
+        type: 'post',
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        data: json,
+        statusCode: {
+            200: function () {
+                alert("Состав отправлен");
+                window.location = '/index.html';
+            }
         }
     })
 }
@@ -93,8 +181,8 @@ function logout() {
 }
 
 function getPlayers(position, maxCost) {
-    let json = '{ "token": "' + getCookie("Auth-Token") + '"position": "' + position + '" ,"maxCost":"' + maxCost + '"}';
-    delAll();
+    let json = '{ "token": "' + getCookie("Auth-Token") + '","position": "' + position + '" ,"maxCost":"' + maxCost + '"}';
+    delAll("player-table");
     $.ajax({
         url: 'http://localhost:8080/getPlayersToBuy',
         type: 'post',
@@ -143,27 +231,23 @@ function buyPlayer(row_id) {
 
 function getAvailablePlayers(position) {
     var json = '{ "token": "' + getCookie("Auth-Token") + '" ,"position":"' + position + '"}';
+    delAll("available-player-table");
     $.ajax({
         url: 'http://localhost:8080/getAvailablePlayers?token=' + getCookie("Auth-Token") + '&position=' + position,
         type: 'get',
         success: function (data, textStatus, request) {
             const table = document.getElementById("available-player-table");
             for (let i = 0; i < data.length; i++) {
-                let str = "player" + i;
+                let str = "playerAv" + i;
                 let row = table.insertRow(i + 1);
                 row.id = str;
                 const cellName = row.insertCell(0);
-
-                row.onclick = function(){
-                    return setPlayer(str)
-                };
 
                 cellName.innerHTML = data[i];
             }
         }
     })
 }
-
 
 function deleteRow(r, tableId) {
     let i = r.parentNode.parentNode.rowIndex;
@@ -176,3 +260,4 @@ function delAll(tableId) {
         table.deleteRow(i, tableId);
     }
 }
+

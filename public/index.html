@@ -38,73 +38,77 @@
         <div id="footcourt">
             <div id="choose-player">
                 <table id="available-player-table">
-                        <tr>
-                            <th>
-                                Name
-                            </th>
-                        </tr>
+                    <tr>
+                        <td id="pl">
+                            Name
+                        </td>
+                    </tr>
                 </table>
             </div>
             <div id="courttable">
                 <table>
                     <tr>
                         <td rowspan="4">
-                            <div id='goalk' class="oblack">
-                                <p><b>+</b></p>
+                            <div id='keeper' class="oblack">
+                                <p><b id="keeper-b">+</b></p>
                             </div>
                         </td>
                         <td>
-                            <div id='def' class="oblack">
-                                <p><b>+</b></p>
+                            <div id='def1' class="oblack">
+                                <p><b id="def1-b">+</b></p>
                             </div>
                         </td>
                         <td>
-                            <div class="oblack">
-                                <p><b>+</b></p>
+                            <div id="middlefielder1" class="oblack">
+                                <p><b id="middlefielder1-b">+</b></p>
                             </div>
                         </td>
                         <td rowspan="2">
                             <div id="forward1" class="oblack">
-                                <p><b>+</b></p>
+                                <p><b id="forward1-b">+</b></p>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <div class="oblack">
-                                <p><b>+</b></p>
+                            <div id="def2" class="oblack">
+                                <p><b id="def2-b">+</b></p>
                             </div>
                         </td>
                         <td>
-                            <div class="oblack">
-                                <p><b>+</b></p>
+                            <div id="middlefielder2" class="oblack">
+                                <p><b id="middlefielder2-b">+</b></p>
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <div class="oblack">
-                                <p><b>+</b></p>
+                            <div id="def3" class="oblack">
+                                <p><b id="def3-b">+</b></p>
                             </div>
                         </td>
                         <td>
-                            <div class="oblack">
-                                <p><b>+</b></p>
+                            <div id="middlefielder3" class="oblack">
+                                <p><b id="middlefielder3-b">+</b></p>
                             </div>
                         </td>
                         <td rowspan="2">
-                            <div class="oblack">
-                                <p><b>+</b></p>
+                            <div id="forward2" class="oblack">
+                                <p><b id="forward2-b">+</b></p>
                             </div>
                         </td>
                     </tr>
                     <tr>
-                        <td><div class="oblack">
-                            <p><b>+</b></p>
-                        </div></td>
-                        <td><div class="oblack">
-                            <p><b>+</b></p>
-                        </div></td>
+                        <td>
+                            <div id="def4" class="oblack">
+                                <p><b id="def4-b">+</b></p>
+                            </div>
+                        </td>
+                        <td>
+                            <div id="middlefielder4" class="oblack">
+                                <p><b id="middlefielder4-b">+</b></p>
+                            </div>
+                        </td>
                     </tr>
                 </table>
             </div>
@@ -112,39 +116,40 @@
         <div id="players">
             <table>
                 <tr>
-                    <td>1</td>
+                    <td class="plName" id="keeper-name">1</td>
                 </tr>
                 <tr>
-                    <td>2</td>
+                    <td class="plName" id="def1-name">2</td>
                 </tr>
                 <tr>
-                    <td>3</td>
+                    <td class="plName" id="def2-name">3</td>
                 </tr>
                 <tr>
-                    <td>4</td>
+                    <td class="plName" id="def3-name">4</td>
                 </tr>
                 <tr>
-                    <td>5</td>
+                    <td class="plName" id="def4-name">5</td>
                 </tr>
                 <tr>
-                    <td>6</td>
+                    <td class="plName" id="middlefielder1-name">6</td>
                 </tr>
                 <tr>
-                    <td>7</td>
+                    <td class="plName" id="middlefielder2-name">7</td>
                 </tr>
                 <tr>
-                    <td>8</td>
+                    <td class="plName" id="middlefielder3-name">8</td>
                 </tr>
                 <tr>
-                    <td>9</td>
+                    <td class="plName" id="middlefielder4-name">9</td>
                 </tr>
                 <tr>
-                    <td id="forward1-name">10</td>
+                    <td class="plName" id="forward1-name">10</td>
                 </tr>
                 <tr>
-                    <td>11</td>
+                    <td class="plName" id="forward2-name">11</td>
                 </tr>
             </table>
+            <button id="send-pl" onclick="setPlayers()">Отправить</button>
         </div>
     </div>
     <div id="stats">

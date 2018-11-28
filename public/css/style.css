@@ -87,13 +87,6 @@ body{
     color: #ffffff;
 }
 
-#ident ul li:hover{
-    background: rgba(24, 20, 163, 0.3);
-    text-decoration: underline;
-    border-radius: 15px;
-    color: #ffffff;
-}
-
 #stadium{
     float: left;
     margin-top: 22px;
@@ -166,6 +159,8 @@ body{
     margin-top: 34px;
 }
 
+
+
 #choose-player{
     display: none;
     width: 400px;
@@ -182,6 +177,7 @@ body{
     width: 150px;
     height: 70px;
     padding-top: 5px;
+    font-size: 20px;
 }
 
 #footcourt table{
@@ -202,9 +198,10 @@ body{
     margin-top: 5px;
 }
 
-#choose-player input{
-    width: 30px;
-    height: 30px;
+#choose-player table tr td:hover{
+    background: rgba(24, 20, 163, 0.3);
+    text-decoration: underline;
+    border-radius: 10px;
 }
 
 #choose-pl{
@@ -269,6 +266,11 @@ body{
     float: left;
     border: 3px solid #ffffff;
     overflow-y: scroll;
+}
+#trans-players table tr td:hover{
+    background: rgba(24, 20, 163, 0.3);
+    text-decoration: underline;
+    border-radius: 5px;
 }
 
 #trans-players table tr td{

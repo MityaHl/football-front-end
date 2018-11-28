@@ -86,7 +86,6 @@ body{
     border-radius: 15px;
     color: #ffffff;
 }
-}
 
 #ident ul li:hover{
     background: rgba(24, 20, 163, 0.3);
@@ -163,15 +162,20 @@ body{
     float: left;
 }
 
+#courttable{
+    margin-top: 34px;
+}
+
 #choose-player{
     display: none;
     width: 400px;
-    height: 381px;
+    height: 375px;
     margin-left: 100px;
-    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px 10px 10px 10px;
-    margin-top: -38px;
-
+    float: left;
+    background-color: rgba(240, 245, 240, 0.8);
+    border: 3px solid #ffffff;
+    overflow-y: scroll;
 }
 
 #footcourt table tr td{
@@ -181,7 +185,7 @@ body{
 }
 
 #footcourt table{
-    margin-top: 38px;
+    margin-top: 10px;
     margin-left: 40px;
 }
 

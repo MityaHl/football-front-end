@@ -4,99 +4,49 @@
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <title>Document</title>
+    <script language="javascript" type="text/javascript"
+            src="http://code.jquery.com/jquery-2.1.1.min.js">
+    </script>
 </head>
-<body>
-   <header>
-        <div id="top_line">
-            <div id="logo"></div>
-            <div id="top-line-right">
-                <div id="ident">
-                    <ul>
-                        <li>Имя</li>
-                        <li>Баланс</li>
-                    </ul>
-                </div>
-                <div id="log-out">
-                    <button id="logout">Выйти</button>
-                </div>
+<body onload="getUserInfo()">
+<header>
+    <div id="top_line">
+        <div id="logo"></div>
+        <div id="top-line-right">
+            <div id="ident">
+                <ul id="userInfo">
+                    <li id="loginName"></li>
+                    <li id="balance"></li>
+                </ul>
+            </div>
+            <div id="log-out">
+                <button id="logout" onclick="logout()">Выйти</button>
             </div>
         </div>
-    </header>
-    <div id="page">
-        <div id="menu">
-            <ul>
-                <li id="myteam-btn"><p>Моя команда</p></li>
-                <li id="stats-btn"><p>Рейтинг</p></li>
-                <li id="transfers-btn"><p>Трансферы</p></li>
-                <li id="results-btn"><p>Результаты</p></li>
-           </ul>
-        </div>
-        <div id="stadium">
-            <div id="footcourt">
-              <div id="choose-player">
-                  <table>
-                      <tr>
-                          <td>
-                                имя
-                          </td>
-                          <td>
-                                цена
-                          </td>
-                          <td>
-                              <button>Купить</button>
-                          </td>
-                      </tr>
-                      <tr>
-                          <td>
-                              имя
-                          </td>
-                          <td>
-                              цена
-                          </td>
-                          <td>
-                              <button>Купить</button>
-                          </td>
-                      </tr>
-                      <tr>
-                          <td>
-                              имя
-                          </td>
-                          <td>
-                              цена
-                          </td>
-                          <td>
-                              <button>Купить</button>
-                          </td>
-                      </tr>
-                      <tr>
-                          <td>
-                              имя
-                          </td>
-                          <td>
-                              цена
-                          </td>
-                          <td>
-                              <button>Купить</button>
-                          </td>
-                      </tr>
-                      <tr>
-                          <td>
-                              имя
-                          </td>
-                          <td>
-                              цена
-                          </td>
-                          <td>
-                              <button>Купить</button>
-                          </td>
-                      </tr>
-                  </table>
-                  
-                  <input id="choose-pl" type="submit" value="Выбрать">
-                  
-              </div>
-              <div id="table">
-                   <table>
+    </div>
+</header>
+<div id="page">
+    <div id="menu">
+        <ul>
+            <li id="myteam-btn"><p>Моя команда</p></li>
+            <li id="stats-btn"><p>Рейтинг</p></li>
+            <li id="transfers-btn"><p>Трансферы</p></li>
+            <li id="results-btn"><p>Результаты</p></li>
+        </ul>
+    </div>
+    <div id="stadium">
+        <div id="footcourt">
+            <div id="choose-player">
+                <table id="available-player-table">
+                        <tr>
+                            <th>
+                                Name
+                            </th>
+                        </tr>
+                </table>
+            </div>
+            <div id="courttable">
+                <table>
                     <tr>
                         <td rowspan="4">
                             <div id='goalk' class="oblack">
@@ -104,7 +54,7 @@
                             </div>
                         </td>
                         <td>
-                            <div id='def1' class="oblack">
+                            <div id='def' class="oblack">
                                 <p><b>+</b></p>
                             </div>
                         </td>
@@ -114,7 +64,7 @@
                             </div>
                         </td>
                         <td rowspan="2">
-                            <div class="oblack">
+                            <div id="forward1" class="oblack">
                                 <p><b>+</b></p>
                             </div>
                         </td>
@@ -150,110 +100,114 @@
                     </tr>
                     <tr>
                         <td><div class="oblack">
-                                <p><b>+</b></p>
-                            </div></td>
+                            <p><b>+</b></p>
+                        </div></td>
                         <td><div class="oblack">
-                                <p><b>+</b></p>
-                            </div></td>
-                    </tr>
-                </table>
-            </div>
-            </div>
-            <div id="players">
-                <table>
-                    <tr>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                    </tr>
-                    <tr>
-                        <td>11</td>
+                            <p><b>+</b></p>
+                        </div></td>
                     </tr>
                 </table>
             </div>
         </div>
-        <div id="stats">
+        <div id="players">
             <table>
-                    <tr>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                    </tr>
-                    <tr>
-                        <td>9</td>
-                    </tr>
-                    <tr>
-                        <td>10</td>
-                    </tr>
-                </table>
-        </div>
-        <div id="result">
-            <p>result</p>
-        </div>
-        <div id="transfers">
-            <div id="trans-players">
-                <table id="player-table">
-
-                </table>
-            </div>
-            <div id="player-param">
-               <form>
-                    <select name="select">
-                        <option>Вратарь</option>
-                        <option>Защитник</option>
-                        <option>Полузащитник</option>
-                        <option>Нападающий</option>
-                    </select><br>
-                    <input type="text" name="select-players" placeholder="Стоимость"><br>
-                    <input type="button" value="Найти">
-               </form>
-            </div>
+                <tr>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td id="forward1-name">10</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                </tr>
+            </table>
         </div>
     </div>
-    <script type="text/javascript" src="jsfile.js"></script> 
+    <div id="stats">
+        <table>
+            <tr>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>8</td>
+            </tr>
+            <tr>
+                <td>9</td>
+            </tr>
+            <tr>
+                <td>10</td>
+            </tr>
+        </table>
+    </div>
+    <div id="result">
+        <p>result</p>
+    </div>
+    <div id="transfers">
+        <div id="trans-players">
+            <table id="player-table" class="nonedisplay">
+                <th>Name</th>
+                <th>Cost</th>
+                <th></th>
+            </table>
+        </div>
+        <div id="player-param">
+            <form>
+                <select name="select" id="select-position">
+                    <option>Вратарь</option>
+                    <option>Защитник</option>
+                    <option>Полузащитник</option>
+                    <option>Нападающий</option>
+                </select><br>
+                <input type="text" id="select-cost" name="select-players" placeholder="Стоимость"><br>
+                <input type="button" id="find-pl" value="Найти" onclick="getPlayers(
+                                                                        document.getElementById('select-position').value,
+                                                                        document.getElementById('select-cost').value)">
+            </form>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="jsfile.js"></script>
 </body>
 </html>
